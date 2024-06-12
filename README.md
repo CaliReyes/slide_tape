@@ -32,7 +32,7 @@ slide_tape: ^0.0.1
 ## Usage
 <pre>
   <code>
-SlideTape(
+    SlideTape(
               height: 70,
               backgroundChild: Center(
                 child: Text("This is a text"),
