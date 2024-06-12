@@ -30,7 +30,8 @@ slide_tape: ^0.0.1
 
 
 ## Usage
-
+<pre>
+  <code>
 SlideTape(
               height: 70,
               backgroundChild: Center(
@@ -40,6 +41,8 @@ SlideTape(
               slidingBarColor: Colors.blue,
               slideDirection: SlideDirection.RIGHT,
             )
+  </code>
+</pre>
 
 ## Additional information
 
