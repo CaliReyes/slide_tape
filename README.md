@@ -14,7 +14,7 @@ and the Flutter guide for
 A sliding Flutter widget. This is a Dart 3 compatible version of the slide_button package.
 
 <br/>
-<img src="https://raw.githubusercontent.com/Timoteohss/slide_button/master/screenshots/untitled.gif" />
+<img src="https://firebasestorage.googleapis.com/v0/b/sfasistente-24d74.appspot.com/o/capturaSlideTape.gif?alt=media&token=249a48a3-fdcc-4409-b9fc-4c9ebef85f21" />
 
 
 ## Installing
