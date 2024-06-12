@@ -1,7 +1,7 @@
 name: slide_tape
 description: "A sliding Flutter widget."
 version: 0.0.1
-homepage:
+homepage: https://github.com/CaliReyes/slide_tape.git
 
 environment:
   sdk: '>=3.3.1 <4.0.0'
