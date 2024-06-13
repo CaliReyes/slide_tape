@@ -68,23 +68,29 @@ class SlideTape extends StatefulWidget {
   /// itself to the right of the screen and is confirmed .
   final SlideDirection? slideDirection;
 
-  const SlideTape({
-    Key? key,
-    this.slidingChild,
-    this.backgroundChild,
-    this.height,
-    this.confirmPercentage = 0.9,
-    this.initialSliderPercentage = 0.2,
-    this.slideDirection = SlideDirection.RIGHT,
-    this.isDraggable = true,
-    this.onButtonSlide,
-    this.onButtonOpened,
-    this.onButtonClosed,
-    @required this.backgroundColor,
-    @required this.slidingBarColor,
-    this.shouldCloseBorders = true,
-    this.borderRadius = 50.0,
-  }) : super(key: key);
+  final bool? iconArrow;
+
+  final Color? iconArrowColor;
+
+  const SlideTape(
+      {Key? key,
+      this.slidingChild,
+      this.backgroundChild,
+      this.height,
+      this.confirmPercentage = 0.9,
+      this.initialSliderPercentage = 0.2,
+      this.slideDirection = SlideDirection.RIGHT,
+      this.isDraggable = true,
+      this.onButtonSlide,
+      this.onButtonOpened,
+      this.onButtonClosed,
+      @required this.backgroundColor,
+      @required this.slidingBarColor,
+      this.shouldCloseBorders = true,
+      this.borderRadius = 50.0,
+      this.iconArrow = false,
+      this.iconArrowColor})
+      : super(key: key);
 
   @override
   _SlideButtonState createState() => _SlideButtonState();
@@ -173,7 +179,7 @@ class _SlideButtonState extends State<SlideTape>
                               : BorderRadius.only(
                                   bottomLeft: Radius.circular(_borderRadius),
                                   topLeft: Radius.circular(_borderRadius))),
-                      child: widget.slidingChild ?? null,
+                      child: _composeSlidingChild(widget.slidingChild),
                     ),
                   ),
                 ),
@@ -183,6 +189,46 @@ class _SlideButtonState extends State<SlideTape>
         ],
       );
     });
+  }
+
+  Widget _composeSlidingChild(Widget? slidingChild) {
+    if (widget.iconArrow == true &&
+        widget.slideDirection == SlideDirection.RIGHT) {
+      return Row(
+        children: [
+          Expanded(
+            child: slidingChild ?? SizedBox(),
+          ),
+          Container(
+              margin: EdgeInsets.only(right: 5),
+              child: Icon(
+                _slideAC!.value >= 0.9
+                    ? Icons.arrow_back_ios
+                    : Icons.arrow_forward_ios,
+                color: widget.iconArrowColor ?? Colors.white,
+              ))
+        ],
+      );
+    } else if (widget.iconArrow == true &&
+        widget.slideDirection == SlideDirection.LEFT) {
+      return Row(
+        children: [
+          Container(
+              margin: EdgeInsets.only(left: 11),
+              child: Icon(
+                _slideAC!.value >= 0.9
+                    ? Icons.arrow_forward_ios
+                    : Icons.arrow_back_ios,
+                color: widget.iconArrowColor ?? Colors.white,
+              )),
+          Expanded(
+            child: slidingChild ?? SizedBox(),
+          )
+        ],
+      );
+    } else {
+      return slidingChild ?? SizedBox();
+    }
   }
 
   // Temporary sigmoid function to remove borders from the sliding bar
