@@ -41,6 +41,7 @@ class _HomePageState extends State<HomePage> {
             slideDirection: SlideDirection.RIGHT,
             backgroundColor: Colors.white70,
             slidingBarColor: Colors.orange,
+            iconArrow: true,
             slidingChild: Container(
               child: Row(
                 children: [
@@ -62,6 +63,7 @@ class _HomePageState extends State<HomePage> {
             slideDirection: SlideDirection.LEFT,
             backgroundColor: Colors.white70,
             slidingBarColor: Colors.black,
+            iconArrow: true,
             slidingChild: Container(
               child: Row(
                 children: [
