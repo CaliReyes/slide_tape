@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                       margin: EdgeInsets.all(15),
                       child: Container(
                         margin: EdgeInsets.only(right: 60),
-                        child: Text('otros widgets aqui 👽'),
+                        child: Text('Otros widgets aqui 👽'),
                       ),
                     ),
                   )
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                       child: Container(
                         margin: EdgeInsets.only(right: 60),
                         child: Text(
-                          'otros widgets aqui 👽',
+                          'Otros widgets aqui 👽',
                           style: TextStyle(color: Colors.white),
                           textAlign: TextAlign.right,
                         ),

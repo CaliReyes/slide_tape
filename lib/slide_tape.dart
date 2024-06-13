@@ -231,7 +231,7 @@ class _SlideButtonState extends State<SlideTape>
     }
   }
 
-  // Temporary sigmoid function to remove borders from the sliding bar
+  //temporary sigmoid function to remove borders from the sliding bar
   double sigmoid(double x) {
     return 1 / (1 + exp(-61 * x + 54));
   }
