@@ -4,4 +4,4 @@
 
 ## 0.1.0
 
-* Added iconArrow property.
+* added iconArrow property.
